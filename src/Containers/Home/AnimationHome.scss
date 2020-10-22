@@ -8,6 +8,7 @@
   animation-direction: normal;
   animation-play-state: running;
 }
+
 .iconnBiss {
   animation: animE;
   animation-duration: 10s;
@@ -29,7 +30,8 @@
   animation-play-state: running;
   z-index: 0;
 }
-.anim > img {
+
+.anim>img {
   animation: animationLogo;
   animation-duration: 3s;
   animation-timing-function: linear;
@@ -40,17 +42,20 @@
   width: 100px;
   height: 100px;
 }
+
 .link {
   color: white;
   text-decoration: none;
   font-size: 1em;
   z-index: 30;
 }
+
 .link:hover {
   color: #f50059;
   z-index: 30;
   font-size: 1.1em;
 }
+
 .Icon {
   animation: animE;
   animation-duration: 10s;
@@ -79,64 +84,79 @@
     -webkit-transform: translate(0vw, 0vh);
     transform: translate(0vw, 0vh);
   }
+
   10% {
     -webkit-transform: translate(0vw, 90vh);
     transform: translate(0vw, 90vh);
   }
+
   20% {
     -webkit-transform: translate(30vw, 0vh);
     transform: translate(30vw, 0vh);
   }
+
   30% {
     -webkit-transform: translate(60vw, 90vh);
     transform: translate(60vw, 90vh);
   }
+
   40% {
     -webkit-transform: translate(90vw, 0vh);
     transform: translate(90vw, 0vh);
   }
 }
+
 @keyframes animL {
   0% {
     -webkit-transform: translate(-10vw, -10vh);
     transform: translate(-40vw, -40vh);
   }
+
   10% {
     -webkit-transform: translate(-10vw, 90vh);
     transform: translate(-10vw, 90vh);
   }
+
   20% {
     -webkit-transform: translate(10vw, 0vh);
     transform: translate(10vw, 0vh);
   }
+
   30% {
     -webkit-transform: translate(30vw, 90vh);
     transform: translate(30vw, 90vh);
   }
+
   40% {
     -webkit-transform: translate(50vw, 0vh);
     transform: translate(50vw, 0vh);
   }
+
   50% {
     -webkit-transform: translate(100vw, 90vh);
     transform: translate(100vw, 90vh);
   }
+
   60% {
     -webkit-transform: translate(50vw, 0vh);
     transform: translate(50vw, 0vh);
   }
+
   70% {
     -webkit-transform: translate(30vw, 90vh);
     transform: translate(30vw, 90vh);
   }
+
   80% {
     -webkit-transform: translate(10vw, 0vh);
     transform: translate(10vw, 0vh);
   }
+
   90% {
     -webkit-transform: translate(-10vw, 90vh);
     transform: translate(-10vw, 90vh);
   }
+
   100% {
     -webkit-transform: translate(-10vw, -10vh);
     transform: translate(-40vw, -40vh);
@@ -148,42 +168,52 @@
     -webkit-transform: translate(0vw, 0vh);
     transform: translate(0vw, 0vh);
   }
+
   10% {
     -webkit-transform: translate(20vw, 90vh);
     transform: translate(20vw, 90vh);
   }
+
   20% {
     -webkit-transform: translate(40vw, 0vh);
     transform: translate(40vw, 0vh);
   }
+
   30% {
     -webkit-transform: translate(60vw, 90vh);
     transform: translate(60vw, 90vh);
   }
+
   40% {
     -webkit-transform: translate(80vw, 0vh);
     transform: translate(80vw, 0vh);
   }
+
   50% {
     -webkit-transform: translate(100vw, 90vh);
     transform: translate(100vw, 90vh);
   }
+
   60% {
     -webkit-transform: translate(80vw, 0vh);
     transform: translate(80vw, 0vh);
   }
+
   70% {
     -webkit-transform: translate(60vw, 90vh);
     transform: translate(60vw, 90vh);
   }
+
   80% {
     -webkit-transform: translate(40vw, 0vh);
     transform: translate(40vw, 0vh);
   }
+
   90% {
     -webkit-transform: translate(20vw, 90vh);
     transform: translate(15vw, 90vh);
   }
+
   100% {
     -webkit-transform: translate(0vw, 0vh);
     transform: translate(0vw, 0vh);
@@ -195,31 +225,38 @@
     -webkit-transform: translate(40vw, 40vh);
     transform: translate(40vw, 40vh);
   }
+
   10% {
     -webkit-transform: translate(30vw, 90vh);
     transform: translate(30vw, 90vh);
   }
+
   20% {
     -webkit-transform: translate(0vw, 0vh);
     transform: translate(0vw, 0vh);
   }
+
   40% {
     -webkit-transform: translate(40vw, 90vh);
     transform: translate(40vw, 90vh);
   }
+
   50% {
     -webkit-transform: translate(60vw, 0vh);
     transform: translate(60vw, 0vh);
   }
+
   60% {
     -webkit-transform: translate(30vw, 90vh);
     transform: translate(30vw, 90vh);
   }
+
   80% {
     -webkit-transform: translate(0vw, 0vh);
     transform: translate(0vw, 0vh);
   }
 }
+
 .titre {
   color: white;
   font-size: 8em;
@@ -236,6 +273,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);

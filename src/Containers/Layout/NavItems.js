@@ -1,6 +1,6 @@
 import React, { Fragment, memo } from 'react';
 import { NavLink } from 'react-router-dom';
-import style from './AnimationHome.module.css';
+import style from '../Home/AnimationHome.module.css';
 
 let NavItems = memo(function NavItems(props) {
   return (

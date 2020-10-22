@@ -1,18 +1,18 @@
 import React, { Fragment, memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styl from './Form.module.css';
-import * as ACTION from './Containers/ActionLog';
-import Spinner from './Spinner';
+import * as ACTION from '../Reducer/ActionLog';
+import Spinner from '../Layout/Spinner';
 
-let regEmail = /^[a-zA-Z0-9+.]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
-
-let Connexion = memo(function Connexion(props) {
+var regEmail = new RegExp(
+  '^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$',
+  'i'
+);
+let Inscription = memo(function Connexion(props) {
   let loading = useSelector((state) => state.login.loading);
-  let facebook = useSelector((state) => state.login.facebookerror);
-
   let dispatch = useDispatch();
   let [Error, setError] = useState(false);
-  let [Url, setUrl] = useState(false);
+  let [Url] = useState(true);
   let [Form, setForm] = useState({
     email: null,
     password: null,
@@ -33,19 +33,11 @@ let Connexion = memo(function Connexion(props) {
     return valid;
   };
 
-  let handleValidate = (e, target) => {
+  let handleValidate = (e) => {
     e.preventDefault();
-    switch (target) {
-      case 'inscription':
-        setUrl(true);
-        break;
-      default:
-        break;
-    }
     let Error = FormError;
     let FormS = Form;
     if (isValid(Error, FormS) && Form.confirmmdp === Form.password) {
-      console.log('hello');
       dispatch(ACTION.AUTH(Form.email, Form.password, Url));
     } else {
       setError(true);
@@ -90,15 +82,8 @@ let Connexion = memo(function Connexion(props) {
     btnStyleBis.push(styl.error);
     formStyle.push(styl.error);
   }
-
+  console.log(Form);
   let error = FormError;
-
-  let handleGoogleSignin = () => {
-    dispatch(ACTION.AUTHGOOGLE);
-  };
-  let handleFacebookSignin = () => {
-    dispatch(ACTION.AUTHFACEBOOK);
-  };
   return (
     <Fragment>
       {loading ? (
@@ -112,7 +97,7 @@ let Connexion = memo(function Connexion(props) {
             zIndex: '40',
             display: 'flex',
             justifyContent: 'center',
-            marginTop: Error ? '7vh' : '10vh',
+            marginTop: Error ? '10vh' : '13vh',
           }}
         >
           <div
@@ -126,11 +111,7 @@ let Connexion = memo(function Connexion(props) {
               borderRadius: '10%',
             }}
           >
-            <form
-              className={formStyle.join(' ')}
-              onSubmit={(e) => handleValidate(e)}
-              noValidate='true'
-            >
+            <form className={formStyle.join(' ')} noValidate='true'>
               <div style={{ flexBasis: '100%', textAlign: 'center' }}>
                 <h1
                   style={{
@@ -141,7 +122,7 @@ let Connexion = memo(function Connexion(props) {
                     margin: '0px',
                   }}
                 >
-                  Identifiez vous
+                  Inscrivez-vous
                   <br />
                   <span style={{ fontSize: '1em' }}>
                     pour accéder à l'application
@@ -219,8 +200,7 @@ let Connexion = memo(function Connexion(props) {
               <div>
                 {Error && (
                   <span style={{ color: 'white' }}>
-                    Utilisateur inconnue, veuillez respecter les champs
-                    indiqués.
+                    Veuillez respecter les champs indiqués.
                   </span>
                 )}
               </div>
@@ -232,27 +212,16 @@ let Connexion = memo(function Connexion(props) {
                 }}
               >
                 <button
-                  className={btnStyle.join(' ')}
-                  type='submit'
-                  name='connexion'
-                  placeholder='connexion'
-                  autoComplete='connexion'
-                  onClick={(e) => handleValidate(e)}
-                >
-                  Se connecter
-                </button>
-                <button
                   className={btnStyleBis.join(' ')}
-                  type='submit'
-                  name='inscription'
-                  placeholder='inscription'
-                  autoComplete='inscription'
-                  onClick={() => setUrl(true)}
+                  type='button'
+                  name='motdepasse'
+                  placeholder='Mot de passe'
+                  autoComplete='motdepasse'
+                  onClick={(e) => handleValidate(e)}
                 >
                   S'inscrire
                 </button>
               </div>
-
               <div style={{ flexBasis: '100%' }}>
                 <div
                   style={{
@@ -260,56 +229,14 @@ let Connexion = memo(function Connexion(props) {
                     display: 'flex',
                     justifyContent: 'center',
                   }}
-                >
-                  <img
-                    src='https://img.icons8.com/plasticine/2x/google-logo.png'
-                    width='100px'
-                    height='100px'
-                    alt='GoogleIcon'
-                    onClick={() => handleGoogleSignin()}
-                  />
-                  <img
-                    src='https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png'
-                    style={{ marginTop: '8px' }}
-                    alt="logo"
-                    width='80px'
-                    height='80px'
-                    onClick={() => handleFacebookSignin()}
-                  />
-                  <div
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      justifyContent: 'flex-end',
-                    }}
-                  >
-                    <p
-                      style={{ color: 'white' }}
-                      onClick={() => props.Change()}
-                    >
-                      Mot de passe oublié ?
-                    </p>
-                  </div>
-                </div>
+                ></div>
               </div>
             </form>
           </div>
-          {facebook ? (
-            <div
-              style={{
-                position: 'fixed',
-                display: 'flex',
-                fontSize: '0.5em',
-                color: 'red',
-              }}
-            >
-              <h1>Veuillez utiliser le même fournisseur de connexion</h1>
-            </div>
-          ) : null}
         </div>
       )}
     </Fragment>
   );
 });
 
-export default Connexion;
+export default Inscription;

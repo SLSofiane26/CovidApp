@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import * as ACT from './ActionLog';
+import * as ACT from '../Reducer/ActionLog';
 
 export let ContextApp = React.createContext();
 class AppContext extends PureComponent {

@@ -1,7 +1,7 @@
 import React, { Fragment, memo } from 'react';
 import style from './AnimationHome.module.css';
-import logo from '../Assets/logo.png';
-import loggb from '../Assets/p.png';
+import logo from '../../Assets/logo.png';
+import loggb from '../../Assets/p.png';
 
 let AnimationHomeBis = memo(function animationHomeBis(props) {
   let icon = [style.Icon];

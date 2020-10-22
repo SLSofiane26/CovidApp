@@ -1,12 +1,12 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Connexion from './Connexion';
-import LoginBackground from './Containers/LoginBackground';
-import { ContextApp } from './Containers/AppContext';
+import LoginBackground from './LoginBackground';
+import { ContextApp } from '../App/AppContext';
 import BackDrop from './BackDrop';
 import ResetPassword from './ResetPassword';
 import { Redirect } from 'react-router-dom';
-import AnimationHomeBis from './Containers/AnimationHomeBis';
+import AnimationHomeBis from '../Home/AnimationHomeBis';
 
 class Login extends PureComponent {
   constructor(props) {

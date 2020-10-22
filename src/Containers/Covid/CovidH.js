@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import * as ACT from './CovidActions';
+import * as ACT from '../Reducer/CovidActions';
 import CovidMap from './CovidMap';
 
 class CovidH extends PureComponent {

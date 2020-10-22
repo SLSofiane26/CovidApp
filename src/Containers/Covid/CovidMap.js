@@ -7,8 +7,9 @@ import {
   withScriptjs,
 } from 'react-google-maps';
 import { connect, useSelector } from 'react-redux';
+import Spinner from '../Layout/Spinner';
 import googleMapStyle from './googleMapStyle';
-import Spinner from '../Spinner';
+
 let MapBis = memo(function MapBis(props) {
   let [state, setstate] = useState(null);
   let dataBis = useSelector((state) => state.covid.dataBisFilter);

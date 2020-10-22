@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
-import image from '../Assets/3.png';
-let LoginBackground = memo(function LoginBackground(props) {
+import image from '../../Assets/1.png';
+
+let RegisterBackground = memo(function RegisterBackground(props) {
   return (
     <div>
       <div
@@ -21,7 +22,7 @@ let LoginBackground = memo(function LoginBackground(props) {
           height: '100vh',
         }}
       >
-        <img src={image} width='100%' height='100%' alt='backgroundLogin' />
+        <img src={image} width='100%' height='100%' alt='imageRegister' />
       </div>
       <div
         style={{
@@ -47,4 +48,4 @@ let LoginBackground = memo(function LoginBackground(props) {
   );
 });
 
-export default LoginBackground;
+export default RegisterBackground;

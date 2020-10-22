@@ -1,9 +1,9 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import AccountBack from './AccountBack';
-import * as ACT from './CovidActions';
-import Spinner from '../Spinner';
-import Styled from '../Style.module.css';
+import AccountBack from '../Account/AccountBack';
+import * as ACT from '../Reducer/CovidActions';
+import Styled from './Style.module.css';
+import Spinner from '../Layout/Spinner';
 class CovidBisBis extends PureComponent {
   constructor(props) {
     super(props);

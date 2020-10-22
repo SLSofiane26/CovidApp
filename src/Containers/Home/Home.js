@@ -15,7 +15,6 @@ class Home extends PureComponent {
   componentDidUpdate = () => {};
 
   render() {
-
     return (
       <Fragment>
         <div
