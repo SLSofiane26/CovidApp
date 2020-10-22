@@ -1,0 +1,63 @@
+.formC {
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  h1 {
+    font-size: 1em;
+    margin: 0px;
+    color: white;
+  }
+
+  ::placeholder {
+    color: RGBA(245, 0, 89, 1);
+    text-align: center;
+    font-size: 15px;
+  }
+
+  > div {
+    margin-top: 10px;
+  }
+  button:focus {
+    outline: 0;
+  }
+  .Btn,
+  .BtnBis {
+    background: transparent;
+    border: none;
+    width: 150px;
+    height: 80px;
+    color: white;
+    box-sizing: content-box;
+    font-size: 1em;
+    border-radius: 10%;
+    border: 1px solid RGBA(245, 0, 89, 1);
+    text-transform: uppercase;
+  }
+
+  .BtnBis.error {
+    border: 1px solid rgba(0, 230, 64, 1);
+  }
+
+  .InputStyle {
+    color: RGBA(245, 0, 89, 1);
+    height: 5vh;
+  }
+  .InputStyle.error {
+    color: white;
+    height: 5vh;
+
+    background: #ff0000;
+  }
+  .LabelStyle {
+    color: white;
+  }
+  .LabelStyle.error {
+    color: #ff0000;
+  }
+}
