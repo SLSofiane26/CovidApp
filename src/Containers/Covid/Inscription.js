@@ -166,7 +166,7 @@ let Inscription = memo(function Connexion(props) {
                 </label>
                 <input
                   className={inputStyle.join(' ')}
-                  type='text'
+                  type='password'
                   placeholder='Mot de passe'
                   autoComplete='motdepasse'
                   name='password'
@@ -190,7 +190,7 @@ let Inscription = memo(function Connexion(props) {
                 <input
                   formNoValidate
                   className={inputStyle.join(' ')}
-                  type='text'
+                  type='password'
                   name='confirmmdp'
                   placeholder='Confirmation'
                   autoComplete='motdepasseconfirm'
