@@ -38,7 +38,6 @@ export let fetchSucces = (data) => async (dispatch) => {
   });
 };
 export let fetchError = (err) => async (dispatch) => {
-  alert('hello');
   console.error(err);
   dispatch({
     type: 'ERRORHOME',

@@ -1,6 +1,6 @@
 import React, { Fragment, memo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import * as ACT from '../Reducer/ActionLog';
+import * as ACT from '../ActionLog';
 
 let regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let ResetPassword = memo(function ResetPassword(props) {

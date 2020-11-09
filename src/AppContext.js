@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import * as ACT from '../Reducer/ActionLog';
+import * as ACT from './Containers/ActionLog';
 
 export let ContextApp = React.createContext();
 class AppContext extends PureComponent {
@@ -23,7 +23,6 @@ class AppContext extends PureComponent {
   componentDidUpdate = (prevState, prevProps) => {};
 
   render() {
-    console.log(this.state.loading);
     let loading = this.state.loading;
 
     return (

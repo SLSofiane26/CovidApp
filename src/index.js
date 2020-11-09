@@ -4,11 +4,11 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import LoginReducer from './Containers/Reducer/LoginReducer.js';
+import LoginReducer from './LoginReducer';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import CovidReducer from './Containers/Reducer/CovidReducer.js';
-import App from './Containers/App/App.js';
+import CovidReducer from '../src/Containers/CovidReducer';
+import App from '../src/Containers/App';
 
 let composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let reducer = combineReducers({

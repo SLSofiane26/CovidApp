@@ -1,5 +1,5 @@
 import React, { Fragment, memo } from 'react';
-import image from '../../Assets/snazzy-image.png';
+import image from '../Assets/snazzy-image.png';
 
 let BackgroundHome = memo(function BackgroundHome(props) {
   return (

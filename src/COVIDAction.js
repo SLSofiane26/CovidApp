@@ -111,7 +111,6 @@ export let ALPHABISBISBISBIS = (filter) => async (dispatch, getState) => {
 export let FILTER = (filter) => (dispatch, getState) => {
   let filterData = getState().covid.dataBis.slice();
   let filterBis = filter.toLowerCase();
-  console.log(filterBis);
   if (!filter) {
     filterData = filterData.sort((a, b) => (a.country > b.country ? 1 : -1));
   } else {

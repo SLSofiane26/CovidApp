@@ -1,8 +1,8 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Spinner from '../Layout/Spinner';
+import Spinner from '../Containers/Layout/Spinner';
 import DataHome from './DataHome';
-import * as AC from '../Reducer/HomeActions';
+import * as AC from './HomeActions';
 
 class HomeData extends PureComponent {
   constructor(props) {

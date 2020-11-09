@@ -1,19 +1,19 @@
 import React, { Fragment, lazy, memo, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import AppContext from './AppContext';
-import Layout from '../Layout/Layout';
-import Spinner from '../Layout/Spinner';
-import CovidBisBis from '../Covid/CovidBisBis';
-import AnimationHomeBis from '../Home/AnimationHomeBis';
+import AppContext from '../AppContext';
+import Layout from './Layout';
+import Spinner from '../Containers/Layout/Spinner';
+import AnimationHomeBis from './AnimationHomeBis';
+import CovidBisBis from './CovidBisBis';
 
-let Account = lazy(() => import('../Account/Account'));
-let Home = lazy(() => import('../Home/Home'));
-let Login = lazy(() => import('../Covid/Login'));
-let Register = lazy(() => import('../Covid/Register'));
-let CovidH = lazy(() => import('../Covid/CovidH'));
-let SignOut = lazy(() => import('../Covid/SignOut'));
-let CovidBis = lazy(() => import('../Covid/CovidBis'));
+let Account = lazy(() => import('../Containers/Account/Account'));
+let Home = lazy(() => import('../Containers/Home'));
+let Login = lazy(() => import('../Login'));
+let Register = lazy(() => import('../Register'));
+let CovidH = lazy(() => import('../Containers/CovidH'));
+let SignOut = lazy(() => import('../Containers/SignOut'));
+let CovidBis = lazy(() => import('../CovidBis'));
 
 let App = memo(function App(props) {
   return (

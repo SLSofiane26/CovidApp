@@ -1,8 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
-import AnimationHomeBis from '../Home/AnimationHomeBis';
-import BackDropRegister from './BackDropRegister';
+import AnimationHomeBis from '../src/Containers/AnimationHomeBis';
+import BackDropRegister from '../src/Containers/Covid/BackDropRegister';
 import Inscription from './Inscription';
 import RegisterBackground from './RegisterBackground';
 class Register extends PureComponent {

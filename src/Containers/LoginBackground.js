@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import image from '../../Assets/3.png';
+import image from '../Assets/3.png';
 let LoginBackground = memo(function LoginBackground(props) {
   return (
     <div>
@@ -36,7 +36,7 @@ let LoginBackground = memo(function LoginBackground(props) {
       <div
         style={{
           position: 'fixed',
-          zIndex: '40',
+          zIndex: '40000',
           color: 'white',
           marginLeft: '5vw',
         }}

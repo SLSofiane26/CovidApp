@@ -7,7 +7,7 @@ let Layout = memo(function Layout(props) {
   let token = useSelector((state) => state.login.token);
   let photo = useSelector((state) => state.login.photo);
   let name = useSelector((state) => state.login.name);
-  console.log(photo);
+
   return (
     <Fragment>
       <Hoc>

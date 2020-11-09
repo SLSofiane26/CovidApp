@@ -1,4 +1,4 @@
-import * as ACT from '../Reducer/ActionsLogin';
+import * as ACT from '../src/Containers/ActionsLogin';
 
 let LoginState = {
   token: null,

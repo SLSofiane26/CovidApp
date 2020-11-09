@@ -1,7 +1,7 @@
 import React, { Fragment, memo, useEffect, useState } from 'react';
-import CovidSearch from './CovidSearch';
+import CovidSearch from './Containers/Covid/CovidSearch';
 import Pagination from './Pagination';
-import Posts from './Posts';
+import Posts from './Containers/Covid/Posts';
 
 let CovidPost = memo(function CovidPost(props) {
   let [posts, setPosts] = useState([]);

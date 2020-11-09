@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import * as ACT from '../Reducer/ActionLog';
+import * as ACT from './ActionLog';
 
 class SignOut extends PureComponent {
   constructor(props) {

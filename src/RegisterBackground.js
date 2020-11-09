@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import image from '../../Assets/1.png';
+import image from './Assets/1.png';
 
 let RegisterBackground = memo(function RegisterBackground(props) {
   return (
@@ -40,6 +40,7 @@ let RegisterBackground = memo(function RegisterBackground(props) {
           zIndex: '40',
           color: 'white',
           marginLeft: '5vw',
+          zIndex: '40000',
         }}
       >
         <h1 onClick={() => props.handleShow()}>COVID-19</h1>

@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import Styled from './Style.module.css';
+import Styled from '../../Style.module.css';
 
 let PostsBis = memo(function PostsBis(props) {
   let [loading, setloading] = useState(false);

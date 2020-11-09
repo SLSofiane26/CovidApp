@@ -3,7 +3,6 @@ import * as ACT from './ActionsLogin';
 import firebase from 'firebase';
 
 export let AUTH = (email, password, state) => async (dispatch) => {
-  console.log(state);
   dispatch({
     type: ACT.AUTH,
     payload: {
@@ -29,7 +28,6 @@ export let AUTH = (email, password, state) => async (dispatch) => {
       let expDate = new Date(
         new Date().getTime() + res.data.expiresIn * 1000
       ).getTime();
-      console.log(expDate);
       localStorage.setItem('idToken', res.data.idToken);
       localStorage.setItem('localId', res.data.localId);
       localStorage.setItem('expDate', expDate);
@@ -168,7 +166,6 @@ export let CheikAuthState = () => async (dispatch, getState) => {
     dispatch(LOGOUT());
   } else {
     let expirationDate = localStorage.getItem('expDate');
-    console.log(expirationDate);
     if (expirationDate <= new Date().getTime()) {
       dispatch(LOGOUT());
     } else {
@@ -180,7 +177,6 @@ export let CheikAuthState = () => async (dispatch, getState) => {
 };
 
 export let UpdateUserProfil = (data) => async (dispatch) => {
-  console.log(data);
   dispatch({
     type: 'STARTUPDATE',
   });
