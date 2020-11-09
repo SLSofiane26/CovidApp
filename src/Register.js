@@ -12,8 +12,15 @@ class Register extends PureComponent {
     };
   }
 
-  componentDidMount = () => {};
-  componentDidUpdate = () => {};
+  componentDidMount = () => {
+    if (this.props.token !== null) {
+      this.props.replace('/covid-19');
+    }
+    console.log(this.props.error);
+  };
+  componentDidUpdate = () => {
+    console.log(this.props.error);
+  };
   render() {
     return (
       <Fragment>
@@ -26,7 +33,6 @@ class Register extends PureComponent {
             }))
           }
         />
-
         <AnimationHomeBis show={this.state.show} />
       </Fragment>
     );
@@ -36,6 +42,7 @@ class Register extends PureComponent {
 let mapStateToProps = (state) => {
   return {
     token: state.login.token,
+    error: state.login.error,
   };
 };
 

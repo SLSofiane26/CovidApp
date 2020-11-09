@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import './Spinner.css';
+
 let Spinner = memo(function Spinner(props) {
   return (
     <div

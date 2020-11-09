@@ -1,5 +1,5 @@
 import React, { Fragment, memo, useEffect, useState } from 'react';
-import CovidSearch from './Containers/Covid/CovidSearch';
+import CovidSearch from './CovidSearch';
 import Pagination from './Pagination';
 import Posts from './Containers/Covid/Posts';
 

@@ -1,4 +1,5 @@
 import * as ACT from '../src/Containers/ActionsLogin';
+import { ALPHA } from './COVIDAction';
 
 let LoginState = {
   token: null,
@@ -103,9 +104,10 @@ let LoginReducer = (state = LoginState, action) => {
         loading: false,
       });
     case ACT.AUTHFAILED:
+      console.log(action.payload.data);
       return Object.assign({}, state, {
         loading: false,
-        error: action.payload.data,
+        error: true,
       });
     default:
       break;

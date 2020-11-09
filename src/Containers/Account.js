@@ -1,8 +1,8 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
-import HomeData from '../HomeData';
-import * as ACT from '../ActionLog';
-import video from '../../Assets/Coronavirus1.mp4';
+import HomeData from './HomeData';
+import * as ACT from './ActionLog';
+import video from '../Assets/Coronavirus1.mp4';
 import { Redirect } from 'react-router';
 
 class Account extends PureComponent {

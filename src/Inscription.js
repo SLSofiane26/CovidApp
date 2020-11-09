@@ -10,6 +10,7 @@ var regEmail = new RegExp(
 );
 let Inscription = memo(function Connexion(props) {
   let loading = useSelector((state) => state.login.loading);
+  let errorB = useSelector((state) => state.login.error);
   let dispatch = useDispatch();
   let [Error, setError] = useState(false);
   let [Url] = useState(true);
@@ -82,8 +83,9 @@ let Inscription = memo(function Connexion(props) {
     btnStyleBis.push(styl.error);
     formStyle.push(styl.error);
   }
-  console.log(Form);
+
   let error = FormError;
+  console.log(errorB);
   return (
     <Fragment>
       {loading ? (
@@ -111,6 +113,23 @@ let Inscription = memo(function Connexion(props) {
               borderRadius: '10%',
             }}
           >
+            {errorB === true && (
+              <div
+                style={{
+                  position: 'fixed',
+                  display: 'flex',
+                  width: '100vw',
+                  justifyContent: 'center',
+                  zIndex: '1000',
+                  color: 'red',
+                  marginTop: '10px',
+                }}
+              >
+                <h1 style={{ margin: '0px', padding: '0px', fontSize: '1em' }}>
+                  Email déjà utilisé
+                </h1>
+              </div>
+            )}
             <form className={formStyle.join(' ')} noValidate='true'>
               <div style={{ flexBasis: '100%', textAlign: 'center' }}>
                 <h1

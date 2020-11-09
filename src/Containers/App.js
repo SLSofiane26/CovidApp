@@ -7,7 +7,7 @@ import Spinner from '../Containers/Layout/Spinner';
 import AnimationHomeBis from './AnimationHomeBis';
 import CovidBisBis from './CovidBisBis';
 
-let Account = lazy(() => import('../Containers/Account/Account'));
+let Account = lazy(() => import('../Containers/Account'));
 let Home = lazy(() => import('../Containers/Home'));
 let Login = lazy(() => import('../Login'));
 let Register = lazy(() => import('../Register'));

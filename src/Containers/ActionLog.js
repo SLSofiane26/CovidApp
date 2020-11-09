@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import * as ACT from './ActionsLogin';
 import firebase from 'firebase';
+import { ALPHA } from '../COVIDAction';
 
 export let AUTH = (email, password, state) => async (dispatch) => {
   dispatch({
@@ -37,7 +38,9 @@ export let AUTH = (email, password, state) => async (dispatch) => {
       dispatch(AUTHSUCCES(res.data.idToken, res.data.localID));
       dispatch(AUTHTIMEMOUT(res.data.expiresIn));
     })
-    .catch((err) => dispatch(AUTHFAILED(err)));
+    .catch((err) => {
+      dispatch(AUTHFAILED(err));
+    });
 };
 
 export let AUTHSTART = (email, password) => async (dispatch) => {
@@ -123,6 +126,7 @@ export let GOOGLESUCCES = (token, id) => async (dispatch) => {
   });
 };
 export let GOOGLEFAILED = (error) => async (dispatch) => {
+  alert('hello');
   dispatch({
     type: 'GOOGLEFAILED',
     payload: {
@@ -141,19 +145,23 @@ export let AUTHFACEBOOK = async (dispatch) => {
     .auth()
     .signInWithPopup(providerBis)
     .then((res) => {
-      localStorage.setItem('idToken', res.credential.idToken);
+      console.log(res);
+      let expDate = new Date(new Date().getTime() + 3600 * 1000).getTime();
+      localStorage.setItem('idToken', res.credential.accessToken);
       localStorage.setItem('localId', res.credential.providerId);
       localStorage.setItem('photo', res.user.photoURL);
       localStorage.setItem('name', res.user.displayName);
       localStorage.setItem('email', res.user.email);
-      let expDate = new Date(new Date().getTime() + 3600 * 1000);
+      localStorage.setItem('expDate', expDate);
       dispatch(AUTHTIMEMOUT(3600));
       dispatch(
         GOOGLESUCCES(res.credential.accessToken, res.credential.providerId)
       );
-      dispatch(AUTHTIMEMOUT(expDate));
     })
-    .catch((err) => dispatch({ type: 'FACEBOOKFAILED' }));
+    .catch((err) => {
+      alert('error');
+      dispatch({ type: 'FACEBOOKFAILED' });
+    });
 };
 
 export let CheikAuthState = () => async (dispatch, getState) => {
@@ -260,6 +268,7 @@ export let LOGOUT = () => async (dispatch) => {
   localStorage.removeItem('photo');
   localStorage.removeItem('name');
   localStorage.removeItem('email');
+
   dispatch({
     type: ACT.LOGOUT,
   });

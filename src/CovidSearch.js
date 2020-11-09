@@ -1,6 +1,6 @@
 import React, { Fragment, memo } from 'react';
 import { useDispatch } from 'react-redux';
-import * as ACTIONS from '../../COVIDAction';
+import * as ACTIONS from '../src/COVIDAction';
 
 let CovidSearch = memo(function CovidSearch(props) {
   let dispatch = useDispatch();

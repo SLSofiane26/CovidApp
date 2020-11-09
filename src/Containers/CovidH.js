@@ -2,7 +2,7 @@ import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import * as ACT from './CovidActions';
-import CovidMap from './Covid/CovidMap';
+import CovidMap from './CovidMap';
 
 class CovidH extends PureComponent {
   constructor(props) {
