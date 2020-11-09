@@ -104,7 +104,12 @@ class CovidBisBis extends PureComponent {
                         marginTop: '0px',
                       }}
                     >
-                      {items.province ? items.province : ' pas de donnée'}
+                      {items.province ? items.province : ' pas de donnée'}{' '}
+                      <span style={{ fontSize: '0.5em' }}>
+                        {this.state.date
+                          ? new Date(this.state.date).toLocaleDateString()
+                          : null}
+                      </span>
                     </h4>
 
                     <div
