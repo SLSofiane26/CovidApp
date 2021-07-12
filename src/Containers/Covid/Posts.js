@@ -1,5 +1,5 @@
 import React, { Fragment, memo } from 'react';
-import PostsBis from './PostsBis';
+import PostsBis from '../../PostsBis';
 import Styled from '../../Style.module.css';
 
 let Posts = memo(function Posts(props) {

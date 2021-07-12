@@ -4,7 +4,7 @@ import Connexion from './Connexion';
 import LoginBackground from './Containers/LoginBackground';
 import { ContextApp } from '../src/AppContext';
 import BackDrop from '../src/Containers/Covid/BackDrop';
-import ResetPassword from './Containers/Covid/ResetPassword';
+import ResetPassword from '../src/ResetPassword';
 import { Redirect } from 'react-router-dom';
 import AnimationHomeBis from '../src/Containers/AnimationHomeBis';
 

@@ -73,16 +73,16 @@ export let AUTHSUCCES = (token, id) => async (dispatch) => {
 };
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyAuW7fn8jLPkbmTkwA3xM6vOVF2RMn4mw0',
-  authDomain: 'sofweb-d460c.firebaseapp.com',
-  databaseURL: 'https://sofweb-d460c.firebaseio.com',
-  projectId: 'sofweb-d460c',
-  storageBucket: 'sofweb-d460c.appspot.com',
-  messagingSenderId: '234928591162',
-  appId: '1:234928591162:web:08a8c4bb267aa287054003',
-  measurementId: 'G-BR9E1ZY7BL',
+  apiKey: 'AIzaSyCIkaptA-fUVnsef604vYmW4tiYDLexxL0',
+  authDomain: 'project-327bb.firebaseapp.com',
+  databaseURL: 'https://project-327bb.firebaseio.com',
+  projectId: 'project-327bb',
+  storageBucket: 'project-327bb.appspot.com',
+  messagingSenderId: '47077319301',
+  appId: '1:47077319301:web:34b65cab5559b17cedffec',
+  measurementId: 'G-6D19145XJP',
 };
-
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
@@ -126,7 +126,6 @@ export let GOOGLESUCCES = (token, id) => async (dispatch) => {
   });
 };
 export let GOOGLEFAILED = (error) => async (dispatch) => {
-  alert('hello');
   dispatch({
     type: 'GOOGLEFAILED',
     payload: {
@@ -159,7 +158,6 @@ export let AUTHFACEBOOK = async (dispatch) => {
       );
     })
     .catch((err) => {
-      alert('error');
       dispatch({ type: 'FACEBOOKFAILED' });
     });
 };

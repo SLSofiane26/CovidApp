@@ -8,7 +8,7 @@ import {
 } from 'react-google-maps';
 import { connect, useSelector } from 'react-redux';
 import Spinner from './Layout/Spinner';
-import googleMapStyle from '../Containers/Covid/googleMapStyle';
+import googleMapStyle from '../Containers/googleMapStyle';
 
 let MapBis = memo(function MapBis(props) {
   let [state, setstate] = useState(null);
@@ -18,8 +18,8 @@ let MapBis = memo(function MapBis(props) {
     <Fragment>
       <GoogleMap
         defaultCenter={{ lat: 47, lng: 5 }}
-        defaultZoom={6}
-        defaultOptions={{ styles: googleMapStyle, minZoom: 5 }}
+        zoom={5}
+        defaultOptions={{ styles: googleMapStyle, minZoom: 3 }}
       >
         {dataBis ? (
           dataBis.map((value, index) => {
@@ -89,7 +89,7 @@ class CovidMap extends PureComponent {
       <Fragment>
         <div style={{ width: '100vw', height: '100vh', position: 'fixed' }}>
           <WrapGoogle
-            googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC4UKzrTZtx-M7aYDJFExvvt39iewtlFJ8'
+            googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC-a0RiQapPANGhV1cXGxPw4x7-_JiAnN0'
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}

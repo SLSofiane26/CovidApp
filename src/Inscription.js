@@ -85,7 +85,6 @@ let Inscription = memo(function Connexion(props) {
   }
 
   let error = FormError;
-  console.log(errorB);
   return (
     <Fragment>
       {loading ? (

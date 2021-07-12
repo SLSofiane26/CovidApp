@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Redirect, withRouter } from 'react-router';
 import AnimationHomeBis from '../src/Containers/AnimationHomeBis';
 import BackDropRegister from '../src/Containers/Covid/BackDropRegister';
 import Inscription from './Inscription';
@@ -14,12 +15,13 @@ class Register extends PureComponent {
 
   componentDidMount = () => {
     if (this.props.token !== null) {
-      this.props.replace('/covid-19');
+      this.props.history.push({ pathname: '/covid-19' });
     }
-    console.log(this.props.error);
   };
   componentDidUpdate = () => {
-    console.log(this.props.error);
+    if (this.props.token !== null) {
+      this.props.history.push({ pathname: '/covid-19' });
+    }
   };
   render() {
     return (
@@ -49,4 +51,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Register));

@@ -93,10 +93,12 @@ let Connexion = memo(function Connexion(props) {
 
   let error = FormError;
 
-  let handleGoogleSignin = () => {
+  let handleGoogleSignin = (e) => {
+    e.preventDefault();
     dispatch(ACTION.AUTHGOOGLE);
   };
-  let handleFacebookSignin = () => {
+  let handleFacebookSignin = (e) => {
+    e.preventDefault();
     dispatch(ACTION.AUTHFACEBOOK);
   };
   return (
@@ -266,15 +268,15 @@ let Connexion = memo(function Connexion(props) {
                     width='100px'
                     height='100px'
                     alt='GoogleIcon'
-                    onClick={() => handleGoogleSignin()}
-                  />
+                    onClick={(e) => handleGoogleSignin(e)}
+                  />{' '}
                   <img
-                    src='https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png'
+                    src='https://www.lespetitsbilingues.com/wp-content/uploads/2019/05/facebook-icon-preview-200x200.png'
                     style={{ marginTop: '8px' }}
                     alt='logo'
                     width='80px'
                     height='80px'
-                    onClick={() => handleFacebookSignin()}
+                    onClick={(e) => handleFacebookSignin(e)}
                   />
                   <div
                     style={{
