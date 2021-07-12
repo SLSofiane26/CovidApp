@@ -89,7 +89,6 @@ class CovidMap extends PureComponent {
       <Fragment>
         <div style={{ width: '100vw', height: '100vh', position: 'fixed' }}>
           <WrapGoogle
-            googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC-a0RiQapPANGhV1cXGxPw4x7-_JiAnN0'
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
