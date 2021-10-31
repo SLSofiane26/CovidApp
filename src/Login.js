@@ -35,7 +35,6 @@ class Login extends PureComponent {
   };
 
   render() {
-    console.log(this.state.reset);
     return (
       <Fragment>
         {this.auth}

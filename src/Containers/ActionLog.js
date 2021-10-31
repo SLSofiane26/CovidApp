@@ -73,15 +73,16 @@ export let AUTHSUCCES = (token, id) => async (dispatch) => {
 };
 
 var firebaseConfig = {
-  apiKey: "AIzaSyCIkaptA-fUVnsef604vYmW4tiYDLexxL0",
-  authDomain: "project-327bb.firebaseapp.com",
-  databaseURL: "https://project-327bb.firebaseio.com",
-  projectId: "project-327bb",
-  storageBucket: "project-327bb.appspot.com",
-  messagingSenderId: "47077319301",
-  appId: "1:47077319301:web:34b65cab5559b17cedffec",
-  measurementId: "G-6D19145XJP",
+  apiKey: "AIzaSyArqvfKvHtwmi0wcgR75Dk7Hpzy4Ob9U4o",
+  authDomain: "hamburger-afe4d.firebaseapp.com",
+  databaseURL: "https://hamburger-afe4d.firebaseio.com",
+  projectId: "hamburger-afe4d",
+  storageBucket: "hamburger-afe4d.appspot.com",
+  messagingSenderId: "235822040538",
+  appId: "1:235822040538:web:5db98f399d572090736ce3",
+  measurementId: "G-57MXB20F63",
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
