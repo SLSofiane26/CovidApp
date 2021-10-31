@@ -1,19 +1,19 @@
-import React, { Fragment, lazy, memo, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
-import AppContext from '../AppContext';
-import Layout from './Layout';
-import Spinner from '../Containers/Layout/Spinner';
-import AnimationHomeBis from './AnimationHomeBis';
-import CovidBisBis from './CovidBisBis';
+import React, { Fragment, lazy, memo, Suspense } from "react";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
+import AppContext from "../AppContext";
+import Layout from "./Layout";
+import Spinner from "../Containers/Layout/Spinner";
+import AnimationHomeBis from "./AnimationHomeBis";
+import CovidBisBis from "./CovidBisBis";
 
-let Account = lazy(() => import('../Containers/Account'));
-let Home = lazy(() => import('../Containers/Home'));
-let Login = lazy(() => import('../Login'));
-let Register = lazy(() => import('../Register'));
-let CovidH = lazy(() => import('../Containers/CovidH'));
-let SignOut = lazy(() => import('../Containers/SignOut'));
-let CovidBis = lazy(() => import('../CovidBis'));
+let Account = lazy(() => import("../Containers/Account"));
+let Home = lazy(() => import("../Containers/Home"));
+let Login = lazy(() => import("../Login"));
+let Register = lazy(() => import("../Register"));
+let CovidH = lazy(() => import("../Containers/CovidH"));
+let SignOut = lazy(() => import("../Containers/SignOut"));
+let CovidBis = lazy(() => import("../CovidBis"));
 
 let App = memo(function App(props) {
   return (
@@ -22,7 +22,7 @@ let App = memo(function App(props) {
         <AppContext>
           <Switch>
             <Route
-              path='/'
+              path="/"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -31,7 +31,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/login'
+              path="/login"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -40,7 +40,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/signup'
+              path="/signup"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -49,7 +49,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/logout'
+              path="/logout"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -58,7 +58,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/account'
+              path="/account"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -67,7 +67,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/covid-19'
+              path="/covid-19"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -76,7 +76,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/covid-19-search'
+              path="/covid-19-search"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -85,7 +85,7 @@ let App = memo(function App(props) {
               )}
             />
             <Route
-              path='/covid-19-data'
+              path="/covid-19-data"
               exact
               render={() => (
                 <Suspense fallback={<Spinner />}>
@@ -97,40 +97,40 @@ let App = memo(function App(props) {
               render={() => (
                 <div
                   style={{
-                    width: '100vw',
-                    justifyContent: 'center',
-                    display: 'flex',
+                    width: "100vw",
+                    justifyContent: "center",
+                    display: "flex",
                   }}
                 >
                   <div
                     style={{
-                      width: '100vw',
-                      height: '100vh',
-                      background: 'rgba(2, 1, 34, 1)',
-                      position: 'fixed',
+                      width: "100vw",
+                      height: "100vh",
+                      background: "rgba(2, 1, 34, 1)",
+                      position: "fixed",
                     }}
                   ></div>
                   <h1
                     style={{
-                      position: 'fixed',
-                      fontSize: '30VW',
-                      marginTop: '100px',
-                      textAlign: 'center',
-                      padding: '0px',
-                      color: 'white',
+                      position: "fixed",
+                      fontSize: "30VW",
+                      marginTop: "100px",
+                      textAlign: "center",
+                      padding: "0px",
+                      color: "white",
                     }}
                   >
-                    404{' '}
+                    404{" "}
                   </h1>
                   <span
                     style={{
-                      color: 'white',
-                      display: 'flex',
-                      position: 'fixed',
-                      marginTop: '80vh',
+                      color: "white",
+                      display: "flex",
+                      position: "fixed",
+                      marginTop: "80vh",
                     }}
                   >
-                    Aucune page{' '}
+                    Aucune page{" "}
                   </span>
                   <AnimationHomeBis />
                 </div>

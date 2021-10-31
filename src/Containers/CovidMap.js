@@ -1,14 +1,14 @@
-import React, { Fragment, memo, PureComponent, useState } from 'react';
+import React, { Fragment, memo, PureComponent, useState } from "react";
 import {
   GoogleMap,
   InfoWindow,
   Marker,
   withGoogleMap,
   withScriptjs,
-} from 'react-google-maps';
-import { connect, useSelector } from 'react-redux';
-import Spinner from './Layout/Spinner';
-import googleMapStyle from '../Containers/googleMapStyle';
+} from "react-google-maps";
+import { connect, useSelector } from "react-redux";
+import Spinner from "./Layout/Spinner";
+import googleMapStyle from "../Containers/googleMapStyle";
 
 let MapBis = memo(function MapBis(props) {
   let [state, setstate] = useState(null);
@@ -45,24 +45,24 @@ let MapBis = memo(function MapBis(props) {
           >
             <div
               style={{
-                width: '300px',
-                height: '300px',
-                margin: '0px',
-                paddingTop: '10px',
-                paddingBottom: '20px',
-                textAlign: 'center',
-                justifyContent: 'center',
-                background: '#020122',
-                color: 'white',
-                fontSize: '1.5em',
+                width: "300px",
+                height: "300px",
+                margin: "0px",
+                paddingTop: "10px",
+                paddingBottom: "20px",
+                textAlign: "center",
+                justifyContent: "center",
+                background: "#020122",
+                color: "white",
+                fontSize: "1.5em",
               }}
             >
-              <h3 style={{ color: 'white' }}> Pays : {state.country}</h3>
+              <h3 style={{ color: "white" }}> Pays : {state.country}</h3>
               <p>Confirmé(s) : {state.confirmed}</p>
               <p> Décé(s) : {state.deaths}</p>
               <p> Guérison(s) : {state.recovered} </p>
               <p> État(s) critique(s) : {state.critical} </p>
-              <span style={{ fontSize: '0.8em', marginTop: '10px' }}>
+              <span style={{ fontSize: "0.8em", marginTop: "10px" }}>
                 Mise à jour le<br></br>
                 {new Date(state.lastUpdate).toLocaleDateString()}
               </span>
@@ -87,8 +87,9 @@ class CovidMap extends PureComponent {
   render() {
     return (
       <Fragment>
-        <div style={{ width: '100vw', height: '100vh', position: 'fixed' }}>
+        <div style={{ width: "100vw", height: "100vh", position: "fixed" }}>
           <WrapGoogle
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNn9x1XCVMaeTSlw5T1vtWDaUQXsXej7c&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}

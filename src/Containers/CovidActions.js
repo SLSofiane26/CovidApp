@@ -1,31 +1,30 @@
-import Axios from 'axios';
+import Axios from "axios";
 
 export let fetchBis = (pays, date) => async (dispatch) => {
+  console.log(pays, date);
   dispatch({
-    type: 'STARTBIS',
+    type: "STARTBIS",
   });
   if (!pays) {
     dispatch(FetchFailed);
   }
   await Axios({
-    method: 'GET',
-    url: 'https://covid-19-data.p.rapidapi.com/report/country/code',
+    method: "GET",
+    url: "https://covid-19-data.p.rapidapi.com/report/country/code",
     headers: {
-      'content-type': 'application/octet-stream',
-      'x-rapidapi-host': 'covid-19-data.p.rapidapi.com',
-      'x-rapidapi-key': '65c2ce8172mshb76e3c55662a068p126191jsn4640a5c9ca70',
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+      "x-rapidapi-key": "65c2ce8172mshb76e3c55662a068p126191jsn4640a5c9ca70",
       useQueryString: true,
     },
     params: {
-      format: 'json',
-      'date-format': 'YYYY-MM-DD',
       date: date,
       code: pays,
     },
   })
     .then((response) => {
       dispatch({
-        type: 'SUCCESBIS',
+        type: "SUCCESBIS",
         payload: {
           data: response.data,
         },
@@ -33,7 +32,7 @@ export let fetchBis = (pays, date) => async (dispatch) => {
     })
     .catch((error) => {
       dispatch({
-        type: 'FAILEDBIS',
+        type: "FAILEDBIS",
         payload: {
           data: error,
         },
@@ -45,16 +44,16 @@ export let fetchBis = (pays, date) => async (dispatch) => {
 export let fetch = () => async (dispatch) => {
   dispatch(FetchStart);
   await Axios({
-    method: 'GET',
-    url: 'https://covid-19-data.p.rapidapi.com/country/all',
+    method: "GET",
+    url: "https://covid-19-data.p.rapidapi.com/country/all",
     headers: {
-      'content-type': 'application/octet-stream',
-      'x-rapidapi-host': 'covid-19-data.p.rapidapi.com',
-      'x-rapidapi-key': '65c2ce8172mshb76e3c55662a068p126191jsn4640a5c9ca70',
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+      "x-rapidapi-key": "65c2ce8172mshb76e3c55662a068p126191jsn4640a5c9ca70",
       useQueryString: true,
     },
     params: {
-      format: 'json',
+      format: "json",
     },
   })
     .then((response) => {
@@ -67,7 +66,7 @@ export let fetch = () => async (dispatch) => {
 
 export let FetchSucces = (data) => async (dispatch) => {
   dispatch({
-    type: 'SUCCES',
+    type: "SUCCES",
     payload: {
       data: data,
     },
@@ -75,7 +74,7 @@ export let FetchSucces = (data) => async (dispatch) => {
 };
 export let FetchFailed = (err) => async (dispatch) => {
   dispatch({
-    type: 'FAILED',
+    type: "FAILED",
     payload: {
       data: err,
     },
@@ -83,6 +82,6 @@ export let FetchFailed = (err) => async (dispatch) => {
 };
 export let FetchStart = () => async (dispatch) => {
   dispatch({
-    type: 'START',
+    type: "START",
   });
 };

@@ -1,12 +1,12 @@
-import React, { Fragment, PureComponent } from 'react';
-import { connect } from 'react-redux';
-import Connexion from './Connexion';
-import LoginBackground from './Containers/LoginBackground';
-import { ContextApp } from '../src/AppContext';
-import BackDrop from '../src/Containers/Covid/BackDrop';
-import ResetPassword from '../src/ResetPassword';
-import { Redirect } from 'react-router-dom';
-import AnimationHomeBis from '../src/Containers/AnimationHomeBis';
+import React, { Fragment, PureComponent } from "react";
+import { connect } from "react-redux";
+import Connexion from "./Connexion";
+import LoginBackground from "./Containers/LoginBackground";
+import { ContextApp } from "../src/AppContext";
+import BackDrop from "../src/Containers/Covid/BackDrop";
+import ResetPassword from "../src/ResetPassword";
+import { Redirect } from "react-router-dom";
+import AnimationHomeBis from "../src/Containers/AnimationHomeBis";
 
 class Login extends PureComponent {
   constructor(props) {
@@ -30,7 +30,7 @@ class Login extends PureComponent {
       this.setState((prevState) => ({
         show: !prevState.show,
       }));
-      this.auth = <Redirect from='/login' to='/account' />;
+      this.auth = <Redirect from="/login" to="/account" />;
     }
   };
 

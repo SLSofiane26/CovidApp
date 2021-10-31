@@ -1,8 +1,8 @@
-import React, { Fragment, PureComponent } from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
-import * as ACT from './CovidActions';
-import CovidMap from './CovidMap';
+import React, { Fragment, PureComponent } from "react";
+import { connect } from "react-redux";
+import { Redirect } from "react-router";
+import * as ACT from "./CovidActions";
+import CovidMap from "./CovidMap";
 
 class CovidH extends PureComponent {
   constructor(props) {
@@ -16,7 +16,7 @@ class CovidH extends PureComponent {
   render() {
     let d = null;
     if (!this.props.token) {
-      d = <Redirect from='/covid-19' to='/login' />;
+      d = <Redirect from="/covid-19" to="/login" />;
     }
     return (
       <Fragment>

@@ -1,6 +1,6 @@
-import React, { Fragment, memo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as ACT from '../src/Containers/ActionLog';
+import React, { Fragment, memo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as ACT from "../src/Containers/ActionLog";
 
 let regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let ResetPassword = memo(function ResetPassword(props) {
@@ -14,7 +14,7 @@ let ResetPassword = memo(function ResetPassword(props) {
 
   let [Form] = useState({
     Error: {
-      email: ' ',
+      email: " ",
     },
   });
   let [FormError, setFormError] = useState(false);
@@ -28,11 +28,11 @@ let ResetPassword = memo(function ResetPassword(props) {
   let handleChange = (e) => {
     let { name, value } = e.target;
     switch (name) {
-      case 'email':
+      case "email":
         Form.Error.email =
           regEmail.test(value) && value.length > 0
-            ? ''
-            : 'Veuillez renseignez une adresse valide';
+            ? ""
+            : "Veuillez renseignez une adresse valide";
       default:
         break;
     }
@@ -55,78 +55,78 @@ let ResetPassword = memo(function ResetPassword(props) {
       ) : (
         <div
           style={{
-            zIndex: '50',
-            position: 'fixed',
-            width: '100vw',
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '60vh',
-            marginLeft: '30vw',
+            zIndex: "50",
+            position: "fixed",
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "60vh",
+            marginLeft: "30vw",
             transform: props.reset
-              ? 'translate(10px,0vh)'
-              : 'translate(10px,50vh)',
-            transition: 'all 1s ease-in-out',
+              ? "translate(10px,0vh)"
+              : "translate(10px,50vh)",
+            transition: "all 1s ease-in-out",
           }}
         >
           <form
             onSubmit={() => handleForm()}
             style={{
-              width: '18vw',
-              display: 'flex',
-              flexDirection: 'column',
-              color: 'white',
-              justifyContent: 'center',
+              width: "18vw",
+              display: "flex",
+              flexDirection: "column",
+              color: "white",
+              justifyContent: "center",
             }}
             noValidate
           >
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'column',
+                display: "flex",
+                flexDirection: "column",
               }}
             >
-              <label htmlFor='resetpassword' noValidate>
+              <label htmlFor="resetpassword" noValidate>
                 Veuillez entrez votre adresse-email
               </label>
               <input
-                style={{ width: '95%', marginTop: '1vh' }}
-                type='text'
-                name='email'
-                autoComplete='resetpassword'
+                style={{ width: "95%", marginTop: "1vh" }}
+                type="text"
+                name="email"
+                autoComplete="resetpassword"
                 onChange={(e) => handleChange(e)}
               />
               {Form.Error.email.length > 0 && (
                 <span
-                  style={{ fontSize: '0.8em', color: 'rgba(0, 230, 64, 1)' }}
+                  style={{ fontSize: "0.8em", color: "rgba(0, 230, 64, 1)" }}
                 >
-                  {Form.Error.email}{' '}
+                  {Form.Error.email}{" "}
                 </span>
               )}
             </div>
             <div
               style={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '5px',
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "5px",
               }}
             >
               <button
                 formNoValidate
-                type='submit'
+                type="submit"
                 style={{
                   background: FormError
-                    ? 'RGBA(245, 0, 89, 1)'
-                    : ' transparent',
-                  borderRadius: '5%',
-                  transition: 'all 3s ease-in-out',
+                    ? "RGBA(245, 0, 89, 1)"
+                    : " transparent",
+                  borderRadius: "5%",
+                  transition: "all 3s ease-in-out",
                   border: FormError
-                    ? '1px SOLID RGBA(245, 0, 89, 1)'
-                    : '1px SOLID rgba(0, 230, 64, 1)',
-                  color: 'white',
-                  height: '40px',
-                  width: '120px',
-                  marginTop: '8px',
+                    ? "1px SOLID RGBA(245, 0, 89, 1)"
+                    : "1px SOLID rgba(0, 230, 64, 1)",
+                  color: "white",
+                  height: "40px",
+                  width: "120px",
+                  marginTop: "8px",
                 }}
               >
                 Réinitialiser votre mot de passe
@@ -134,7 +134,13 @@ let ResetPassword = memo(function ResetPassword(props) {
             </div>
             {send ? (
               <div>
-                <h1 style={{ color: 'rgba(0, 230, 64, 1)', fontSize: '1em' }}>
+                <h1
+                  style={{
+                    color: "rgba(0, 230, 64, 1)",
+                    fontSize: "1em",
+                    textAlign: "center",
+                  }}
+                >
                   Email envoyé avec succés
                 </h1>
               </div>
